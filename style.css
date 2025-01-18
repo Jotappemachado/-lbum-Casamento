@@ -1,0 +1,121 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+}
+
+/* Estilo do título */
+h1 {
+    font-size: 45px;
+    color: #ff69b4;
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: 'Georgia', serif; /* Fonte mais elegante */
+}
+
+/* Container do carrossel */
+.carousel-container {
+    width: 100%;
+    max-width: 900px; /* Aumenta a largura máxima do carrossel */
+    height: 600px; /* Aumenta a altura do carrossel */
+    overflow: hidden;
+    border-radius: 10px;
+    position: relative;
+    background-color: #333; /* Fundo preto */
+}
+
+/* Carrossel */
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    height: 100%;
+}
+
+/* Imagens no carrossel */
+.carousel img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Garante que as imagens se ajustem ao container sem cortes */
+    flex-shrink: 0;
+}
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 768px) {
+    .carousel-container {
+        height: 400px; /* Aumenta a altura para dispositivos móveis */
+    }
+}
+
+#toggle-musica {
+    background-color: #FF6347; /* Cor de fundo quente e suave */
+    color: #fff; /* Texto branco */
+    font-size: 1.2rem; /* Tamanho da fonte */
+    padding: 10px 20px; /* Espaçamento interno */
+    border: none; /* Remove bordas */
+    border-radius: 25px; /* Bordas arredondadas */
+    cursor: pointer; /* Indica que é clicável */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Transições suaves */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra suave */
+}
+
+#toggle-musica:hover {
+    background-color: #FF4500; /* Cor de fundo quando passar o mouse */
+    transform: scale(1.1); /* Aumenta ligeiramente o botão */
+}
+
+#toggle-musica:active {
+    transform: scale(0.95); /* Efeito de apertar o botão */
+}
+
+/* Estilo para o controle de volume */
+#volume {
+    -webkit-appearance: none; /* Remove o estilo padrão */
+    appearance: none;
+    width: 200px; /* Largura do controle */
+    height: 8px; /* Altura da barra */
+    background: #FF6347; /* Cor de fundo da barra */
+    border-radius: 5px; /* Bordas arredondadas */
+    cursor: pointer; /* Indica que é interativo */
+    transition: background 0.3s ease; /* Transição suave */
+}
+
+#volume::-webkit-slider-runnable-track {
+    height: 8px;
+    border-radius: 5px;
+}
+
+#volume::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Remove o estilo padrão */
+    appearance: none;
+    width: 20px; /* Largura do "polegar" */
+    height: 20px; /* Altura do "polegar" */
+    background-color: #fff; /* Cor do "polegar" */
+    border-radius: 50%; /* Torna o "polegar" redondo */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Sombra para dar profundidade */
+}
+
+#volume:focus {
+    outline: none; /* Remove a borda de foco */
+    box-shadow: 0 0 5px rgba(255, 99, 71, 0.7); /* Sombra de foco */
+}
+
+#volume:hover {
+    background: #FF4500; /* Cor de fundo quando passar o mouse */
+}
+
+/* Estilo para o label do volume */
+label {
+    font-size: 1.1rem; /* Tamanho da fonte */
+    margin-left: 20px; /* Espaçamento à esquerda */
+    color: #333; /* Cor do texto */
+    font-family: 'Arial', sans-serif;
+}
